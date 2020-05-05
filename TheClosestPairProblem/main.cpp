@@ -1,5 +1,8 @@
 //The Closest Pair Problem
 //UVA10245
+
+//給你一些二維平面上的點的座標，請你告訴我其中2點間最近的距離是多少。
+
 #include<iostream>
 #include <algorithm>
 #include <iostream>
@@ -11,9 +14,10 @@ using namespace std;
 
 class point
 {
-public:
-    double x,y;
+	public:
+		double x,y;
 };
+
 point P[10004];
 
 bool cmp( point a, point b )
