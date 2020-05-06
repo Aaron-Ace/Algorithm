@@ -36,12 +36,12 @@ double mindist( int a, int b )
     int l = (a+b)/2,r = (a+b)/2,mid = (a+b)/2; //line:左集合與右集合的中間線x座標
     double d = min( mindist( a, mid-1 ), mindist( mid+1, b ) );//一直左右分找到最小的距離
 
-    while ( l >= a && d > P[mid].x-P[l].x ){ l --;}
+    while ( l >= a && d > P[mid].x-P[l].x ){ l --;}//找到中線左右邊d距離的那條線
     while ( r <= b && d > P[r].x-P[mid].x ){ r ++;}
 
     for ( int i = l+1 ; i < r ; ++ i )
         for ( int j = i+1 ; j < r ; ++ j )
-            d = min(d,dist(P[i],P[j]));
+            d = min(d,dist(P[i],P[j]));//再次驗證是否有距離小於d的兩個點
 
     return d;
 }
